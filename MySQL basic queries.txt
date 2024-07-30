@@ -1,0 +1,181 @@
+MySQL basic queries
+
+Database Quries
+
+To create database
+#CREATE DATABASE databasename;
+
+To Delete database
+#DROP DATABASE databasename;
+
+To Create a table
+#CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+
+To delete table
+#DROP TABLE table_name;
+
+To alter a table
+#ALTER TABLE table_name
+ADD column_name datatype;
+
+#ALTER TABLE table_name
+DROP COLUMN column_name;
+
+#ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+
+Constraints(NOT NULL , Unique , Primary Key , Foreign Key , Check , Default , Create Index)
+#CREATE TABLE table_name (
+    column1 datatype constraint,
+    column2 datatype constraint,
+    column3 datatype constraint,
+    ....
+);
+
+Auto Increment
+#CREATE TABLE Persons (
+    Personid int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+);
+
+Table Quries
+
+Select
+#SELECT column1, column2, ...
+FROM table_name;
+
+#SELECT *
+FROM table_name;
+
+Where Condition 
+#SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+And , Or , Not Operations
+#SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 OR condition3 ...;
+
+#SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+
+Order By
+#SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;(either asc or desc)
+
+Inserting values to table
+#INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...),(value1, value2, value3, ...),...;
+
+Null values
+#SELECT column_names
+FROM table_name
+WHERE column_name IS NULL;
+
+#SELECT column_names
+FROM table_name
+WHERE column_name IS NOT NULL;
+
+Update table
+#UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+Delete values from a table
+#DELETE FROM table_name WHERE condition;
+
+Limit
+#SELECT * FROM Customers
+LIMIT 3;
+
+Aggregate Fnuctions
+Min
+#SELECT MIN(column_name)
+FROM table_name
+WHERE condition;
+
+Max
+#SELECT MAX(column_name)
+FROM table_name
+WHERE condition;
+
+Count
+#SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+
+Avg
+#SELECT AVG(column_name)
+FROM table_name
+WHERE condition;
+
+Sum
+#SELECT SUM(column_name)
+FROM table_name
+WHERE condition;
+
+Like
+#SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE pattern;
+
+In
+#SELECT column_name(s)
+FROM table_name
+WHERE column_name IN (value1, value2, ...);
+
+Not In
+#SELECT column_name(s)
+FROM table_name
+WHERE column_name NOT IN (value1, value2, ...);
+
+Between
+#SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+Aliases
+#SELECT column_name AS alias_name
+FROM table_name;
+
+Joins
+Inner Join
+#SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+Left Join
+#SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+LEFT JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+RIGHT Join
+#SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+RIGHT JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+Cross Join
+#SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+CROSS JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+Self Join
+#SELECT column_name(s)
+FROM table1 T1, table1 T2
+WHERE condition;
+
+Union
+#SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
